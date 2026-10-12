@@ -39,7 +39,7 @@ jobs:
 
       # Set up SonarQube cache
       - name: "Cache SonarQube packages"
-        uses: "actions/cache@0057852bfaa89a56745cba8c7296529d2fc3983"
+        uses: "actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830"
         with:
           path: "~/.m2"
           key: "${{ runner.os }}-sonar"

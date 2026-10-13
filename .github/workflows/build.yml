@@ -105,3 +105,18 @@ jobs:
             ghcr.io/${{ github.repository }}:${{ github.sha }}
             ghcr.io/${{ github.repository }}:latest
           labels: org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}
+
+  deploy:
+    name: Trigger Render deployment
+    needs: publish
+    runs-on: ubuntu-latest
+    permissions: {}
+    steps:
+      - name: Deploy published image
+        env:
+          RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+        run: |
+          : "${RENDER_DEPLOY_HOOK_URL:?Set the Render deploy hook in repository secrets}"
+          curl --fail --silent --show-error --get \
+            --data-urlencode "imgURL=ghcr.io/$GITHUB_REPOSITORY:$GITHUB_SHA" \
+            "$RENDER_DEPLOY_HOOK_URL"

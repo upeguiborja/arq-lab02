@@ -54,7 +54,7 @@ Nuestro pipeline de CI/CD ejecuta `mvn -B test` en primer lugar. Si estas prueba
 
 Nuestro pipeline de CI/CD está configurado de tal manera que al integrar nuevos cambios a la rama `main` se ejecutarán las etapas anteriores, si finalizan correctamente el pipeline lanzará una nueva tarea para publicar la imagen del contenedor a Github Packages, que es la alternativa que ofrece GitHub a Docker Hub, para ello el pipeline solicita credenciales a GitHub con permisos para escribir paquetes `packages: write`, luego inicia sesión en `ghcr.io` con el token temporal de GitHub suministrado anteriormente y finalmente publica la imagen con dos etiquetas. La etiqueta `latest` y la etiqueta con el SHA completo del último commit integrado a la rama.
 
-#TODO: Add GHCR image
+![GHCR Container Image](docs/img/github-ghcr.png)
 
 ### 4.4. Crear el servicio en Render y activar el despliegue
 
@@ -66,16 +66,22 @@ Nuestro pipeline de CI/CD está configurado de tal manera que al integrar nuevos
 - [Despliegue desde un registro](https://render.com/docs/deploying-an-image)
 - [Deploy hooks de Render](https://render.com/docs/deploy-hooks)
 
-#TODO: Add pipeline image
+![Pipeline de Github Actions](docs/img/github-pipeline.png)
 
 ## 5. Evidencia de ejecución en la nube
 
 Finalmente para comprobar que nuestra aplicación se desplegó correctamente hacemos llamadas HTTP desde nuestro navegador para comprobar que cada uno de los endpoints devuelve el valor correcto.
 
-#TODO: Render live image
+![Despliegue de Render](docs/img/render-deployment.png)
 ![Endpoint de Healthcheck](docs/img/render-health.png)
 ![Endpoint de Version](docs/img/render-version.png)
 ![Endpoint de Paises](docs/img/render-nations.png)
 
 ## 6. Conclusiones
 
+
+- Con GitHub Actions logramos que cada cambio integrado a la rama `main` tuviera que pasar por las mismas verificaciones. Primero se ejecutan las pruebas unitarias con Maven y, si estas pasan, se envía el análisis estático de código a SonarQube Cloud. De esta manera pudimos consultar en una misma ejecución qué pruebas pasaron y en qué etapa se presentó un error.
+
+- Una vez completadas estas etapas, nuestro pipeline construyó correctamente la imagen de contenedor Docker, esta fue publicada en GitHub Packages y finalmente nuestro pipelina solicitó su despliegue en Render. Al utilizar el SHA del commit como etiqueta podemos identificar qué versión de nuestro código se está ejecutando Render. Finalmente, con las consultas desde el navegador comprobamos que la API desplegada respondía al healthcheck y devolvía la versión y los datos de países esperados.
+
+- El análisis estático complementa las pruebas unitarias. Mientras las pruebas nos permiten comprobar que los endpoints responden como esperamos, SonarQube Cloud nos ayuda a identificar código duplicado y posibles problemas de mantenimiento. Al repetir el análisis con cada cambio podemos comparar sus resultados con los de la versión anterior y corregir un problema mientras todavía tenemos presente el código que lo introdujo.

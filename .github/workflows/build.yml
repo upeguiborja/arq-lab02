@@ -27,7 +27,7 @@ jobs:
       - name: "Set up JDK"
         uses: "actions/setup-java@77dd5b2ce225ea11469928ac317850245a74ae78"
         with:
-          java-version: "17"
+          java-version: "21"
           distribution: "temurin"
           cache: "maven"
 
@@ -55,11 +55,10 @@ jobs:
         with:
           fetch-depth: 0
 
-      # Set up JDK 17
       - name: "Set up JDK"
         uses: "actions/setup-java@77dd5b2ce225ea11469928ac317850245a74ae78"
         with:
-          java-version: "17"
+          java-version: "21"
           distribution: "temurin"
           cache: "maven"
 
@@ -73,4 +72,4 @@ jobs:
         run: "mvn -B clean verify"
 
       - name: "SonarCloud analysis"
-        run: "mvn -B org.sonarsource.scanner.maven:sonar-maven-plugin:sonar"
+        run: "mvn -B org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=upeguiborja_arq-lab02"

@@ -21,7 +21,7 @@ public class DataController {
     }
 
     @GetMapping("/nations")
-    public JsonNode getRandomNation() {
+    public JsonNode getRandomNations() {
         var objectMapper = new ObjectMapper();
         var faker = new Faker(new Locale("en-US"));
         var nations = objectMapper.createArrayNode();
@@ -59,7 +59,7 @@ public class DataController {
     }
 
     @GetMapping("/aviations")
-    public JsonNode getRandomAviation() {
+    public JsonNode getRandomAviations() {
         var objectMapper = new ObjectMapper();
         var faker = new Faker(new Locale("en-US"));
         //noinspection SpellCheckingInspection

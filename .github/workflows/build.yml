@@ -74,7 +74,7 @@ jobs:
       - name: "SonarCloud analysis"
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: "mvn -B org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=upeguiborja_arq-lab02"
+        run: "mvn -B org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=arq-lab02"
 
   publish:
     name: Build and publish container image

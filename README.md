@@ -1,12 +1,12 @@
 # Laboratorio 2 – Integración y despliegue continuo de una API Spring Boot
 
 [![CI/CD Pipeline](https://github.com/upeguiborja/arq-lab02/actions/workflows/build.yml/badge.svg)](https://github.com/upeguiborja/arq-lab02/actions/workflows/build.yml)
-[![Quality gate status](https://sonarcloud.io/api/project_badges/measure?project=upeguiborja_arq-lab02&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=upeguiborja_arq-lab02) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=upeguiborja_arq-lab02&metric=coverage)](https://sonarcloud.io/summary/new_code?id=upeguiborja_arq-lab02)
-[![Lines of code](https://sonarcloud.io/api/project_badges/measure?project=upeguiborja_arq-lab02&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=upeguiborja_arq-lab02)
-[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=upeguiborja_arq-lab02&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=upeguiborja_arq-lab02)
-[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=upeguiborja_arq-lab02&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=upeguiborja_arq-lab02)
-[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=upeguiborja_arq-lab02&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=upeguiborja_arq-lab02)
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=upeguiborja_arq-lab02&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=upeguiborja_arq-lab02)
+[![Quality gate status](https://sonarcloud.io/api/project_badges/measure?project=arq-lab02&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=arq-lab02) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=arq-lab02&metric=coverage)](https://sonarcloud.io/summary/new_code?id=arq-lab02)
+[![Lines of code](https://sonarcloud.io/api/project_badges/measure?project=arq-lab02&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=arq-lab02)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=arq-lab02&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=arq-lab02)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=arq-lab02&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=arq-lab02)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=arq-lab02&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=arq-lab02)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=arq-lab02&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=arq-lab02)
 [![Render](https://img.shields.io/badge/Despliegue-Render-4630EB?logo=render)](https://arq-lab02-latest.onrender.com)
 
 **Curso** · Arquitectura de Software<br>

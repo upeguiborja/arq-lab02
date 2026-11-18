@@ -28,7 +28,7 @@ En este informe detallaremos el proceso para configurar un pipeline de despliegu
 | Componente | Función |
 | --- | --- |
 | Java 21, Maven y JaCoCo | Compilar la API, ejecutar las pruebas y generar el informe de cobertura. |
-| GitHub Actions | Orquestar las tareas del pipeline |
+| GitHub Actions | Orquestar las tareas del pipeline.|
 | SonarQube Cloud | Ejecutar el análisis estático del código. |
 | Docker y GitHub Container Registry (GHCR) | Construir, etiquetar y distribuir la imagen. |
 | Render | Ejecutar el contenedor y consultar la API por HTTPS. |
